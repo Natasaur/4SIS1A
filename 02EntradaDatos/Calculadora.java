@@ -7,6 +7,7 @@ public class Calculadora {
         Scanner scan = new Scanner(System.in);
 
         do {
+            op=0;
             System.out.println("Seleccione una de las opciones: ");
             System.out.println("1. Suma");
             System.out.println("2. Resta");
