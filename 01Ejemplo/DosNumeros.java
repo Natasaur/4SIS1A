@@ -1,3 +1,4 @@
+//Algoritmo que lea dos números,  y escriba el resultado de la suma, resta , producto y división.
 import java.util.Scanner; //Librería para leer datos del teclado
 
 public class DosNumeros {
