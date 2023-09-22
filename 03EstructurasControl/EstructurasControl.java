@@ -1,5 +1,6 @@
 
 import java.util.Scanner;
+import java.util.*;
 
 public class EstructurasControl {
 	public static void main (String[] args){
@@ -13,9 +14,9 @@ public class EstructurasControl {
       //Se realiza para no tener valores "basura"
       Scanner entrada = new Scanner(System.in); //Crea una instancia del objeto de la entrada por defecto de la computadora para leer caracteres.
 
-      int op, flag, numbinario, total, cantidadproducto, num1, edad, fahrenheit, n, positivos, negativos, base, altura, area, perimetro;
+      int op, flag, numbinario, total, cantidadproducto, num1, edad, fahrenheit, n, positivos, negativos, base, altura, area, radio;
       float precio, resultado = 0, compra = 0;
-      double celsius, kelvin, rankine;
+      double celsius, kelvin, rankine, volumen, hipotenusa, perimetro;
       String binario = "";
       String nombreproducto;
       char letra;
@@ -205,7 +206,7 @@ public class EstructurasControl {
             case 6:
             do{
                //Area, perimetro y volumen
-               System.out.print(PI);
+               //System.out.print(PI);
                flag = 0;
                System.out.println("Seleccione alguna de las siguientes opciones: ");
                System.out.println("1. Área y Perímetro de un rectángulo.");
@@ -230,16 +231,24 @@ public class EstructurasControl {
                   System.out.println("Ingrese el valor de la altura: ");
                   altura = entrada.nextInt();
                   area = (base * altura)/2;
-                  perimetro = 2 * (base + altura);
+                  hipotenusa = Math.sqrt(Math.pow(base, 2) + Math.pow(altura, 2));
+                  perimetro = base + altura + hipotenusa;
                   System.out.println("Área: " + area);
                   System.out.println("Perímetro: " + perimetro);
-                     
                      break;
                   case 3:
-                     
+                  System.out.println("Ingrese el valor del radio: ");
+                  radio = entrada.nextInt();
+                  volumen = (4/3) * PI * Math.pow(radio, 3);
+                  System.out.println("Volúmen: " + volumen);
                      break;
                   case 4:
-                     
+                  System.out.println("Ingrese el valor del radio: ");
+                  radio = entrada.nextInt();
+                  System.out.println("Ingrese el valor de la altura: ");
+                  altura = entrada.nextInt();
+                  volumen = PI * Math.pow(radio, 2) * altura;
+                  System.out.println("Volúmen: " + volumen);
                      break;
                
                   default:
