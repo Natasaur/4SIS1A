@@ -14,7 +14,7 @@ public class EstructurasControl {
       //Se realiza para no tener valores "basura"
       Scanner entrada = new Scanner(System.in); //Crea una instancia del objeto de la entrada por defecto de la computadora para leer caracteres.
 
-      int op, flag, numbinario, total, cantidadproducto, num1, edad, fahrenheit, n, positivos, negativos, base, altura, area, radio;
+      int op, flag, numbinario, total, cantidadproducto, num1, num2, edad, fahrenheit, n, positivos, negativos, base, altura, area, radio, producto;
       float precio, resultado = 0, compra = 0;
       double celsius, kelvin, rankine, volumen, hipotenusa, perimetro;
       String binario = "";
@@ -24,6 +24,7 @@ public class EstructurasControl {
 
       do {
 			op = 0;
+         System.out.print("\033[H\033[2J"); //Clear Screen
 			System.out.println("Escoge una de las opciones siguientes: ");
 			System.out.println("1. Descuento por edad");
          System.out.println("2. Convertir número entero a binario"); //Jimmy
@@ -269,6 +270,7 @@ public class EstructurasControl {
                break;
          	case 7:
             do{
+               //Tabla
 
                op=0;
                System.out.println("");
@@ -280,7 +282,19 @@ public class EstructurasControl {
             }while(op!=2);   
                break;
             case 8:
+            //Factorial
             do{
+               System.out.println("Ingrese el número a calcular el factorial: ");
+               n = entrada.nextInt();
+               producto = 1;
+               if (n < 0) {
+                  System.out.println("El número no debe ser negativo.");
+               } else {
+                  for (int i = 1; i <= n; i++) {
+                     producto = producto * i;
+                  }
+               }
+               System.out.println("Factorial de " + n + " = " + producto);
 
                op=0;
                System.out.println("");
@@ -293,7 +307,15 @@ public class EstructurasControl {
                break;
             case 9:
             do{
-
+               //Figurita Cuadrado
+               System.out.println("Ingrese el valor de n: ");
+               n = entrada.nextInt();
+               for (int i = 1; i <= n; i++) {
+                  for (int j = 1; j <= n; j++) {
+                     System.out.print("*");
+                  }
+                  System.out.println("");
+               }
                op=0;
                System.out.println("");
                System.out.println("¿Repetir el ejercicio?");
@@ -305,6 +327,21 @@ public class EstructurasControl {
                break;
             case 10:
             do{
+               //Figurita Hueca
+               System.out.println("Ingrese el valor de n: ");
+               n = entrada.nextInt();
+               for (int i = 1; i <= n; i++) { //Recorre cada cada columna
+                  for (int j = 1; j <= n; j++) { //Recorre cada fila
+                     if (i == 1 || i == n) { //Sólo toma las filas externas
+                        System.out.print("*");
+                     } else if (j == 1 || j == n) { //Sólo toma las columnas externas
+                        System.out.print("*");
+                     } else {
+                        System.out.print(" ");      
+                     }
+                  }
+                  System.out.println("");
+               }
 
                op=0;
                System.out.println("");
@@ -317,6 +354,23 @@ public class EstructurasControl {
                break;
             case 11:
             do{
+               //Patrón de código
+               n = 8;
+               for (int i = 1; i <= n; i++) {
+                  for (int j = 1; j <= n; j++) {
+                     if (i % 2 == 0) {
+                        if (j == 1) {
+                           System.out.print(" ");
+                           System.out.print("*");
+                        } else {
+                           System.out.print("*");
+                        }
+                     } else {
+                        System.out.print("*");
+                     }
+                  }
+                  System.out.println("");
+               }
 
                op=0;
                System.out.println("");
@@ -329,8 +383,36 @@ public class EstructurasControl {
                break;
             case 12:
             do{
+               //Diamante
+               System.out.println("Ingrese el valor de n: ");
+               n = entrada.nextInt();
+               System.out.println("");
+               //Parte superior
+               if (n % 2 == 0){
+                  System.out.println("El número debe ser impar.");
+               } else {
+                  for (int i = 1; i <= n; i++) {
+                     for (int j = 1; j <= n-i; j++) {
+                        System.out.print(" ");
+                     }
+                     for (int k = 1; k <= 2*i-1; k++) {
+                        System.out.print("*");
+                     }
+                     System.out.println("");
+                  }
+                  //Parte inferior
+                  for (int i = n-1; i >= 1; i--) {
+                     for (int j = 1; j <= n-i; j++) {
+                        System.out.print(" ");
+                     }
+                     for (int k = 1; k <= 2*i-1; k++) {
+                        System.out.print("*");
+                     }
+                     System.out.println("");
+                  }
+               }
 
-               op=0;
+               op = 0;
                System.out.println("");
                System.out.println("¿Repetir el ejercicio?");
                System.out.println("1. Sí");
@@ -340,16 +422,104 @@ public class EstructurasControl {
             }while(op!=2);   
                break;
             case 13:
+            //Calculadora
             do{
-
-               op=0;
-               System.out.println("");
-               System.out.println("¿Repetir el ejercicio?");
-               System.out.println("1. Sí");
-               System.out.println("2. No");
-               op = entrada.nextInt();
-               System.out.print("\033[H\033[2J"); //Clear Screen
-            }while(op!=2);  
+               flag = 0;
+               System.out.println("Seleccione una opción: ");
+               System.out.println("1. Suma");
+               System.out.println("2. Resta");
+               System.out.println("3. Multiplicación");
+               System.out.println("4. División");
+               System.out.println("5. Salir");
+               flag = entrada.nextInt();
+               switch (flag) {
+                  case 1:
+                  do { //Suma
+                     System.out.println("Ingrese el primer número: ");
+                     num1 = entrada.nextInt();
+                     System.out.println("Ingrese el segundo número: ");
+                     num2 = entrada.nextInt();
+                     resultado = num1 + num2;
+                     System.out.println(resultado);
+                     
+                     op=0;
+                     System.out.println("");
+                     System.out.println("¿Repetir el ejercicio?");
+                     System.out.println("1. Sí");
+                     System.out.println("2. No");
+                     op = entrada.nextInt();
+                     System.out.print("\033[H\033[2J"); //Clear Screen
+                  } while (op!=2);
+                     break;
+                  case 2:
+                  do { //Resta
+                     System.out.println("Ingrese el primer número: ");
+                     num1 = entrada.nextInt();
+                     System.out.println("Ingrese el segundo número: ");
+                     num2 = entrada.nextInt();
+                     resultado = num1 - num2;
+                     System.out.println(resultado);
+                     
+                     op=0;
+                     System.out.println("");
+                     System.out.println("¿Repetir el ejercicio?");
+                     System.out.println("1. Sí");
+                     System.out.println("2. No");
+                     op = entrada.nextInt();
+                     System.out.print("\033[H\033[2J"); //Clear Screen
+                  } while (op!=2);
+                     break;
+                  case 3:
+                  do { //Multiplicación
+                     System.out.println("Ingrese el primer número: ");
+                     num1 = entrada.nextInt();
+                     System.out.println("Ingrese el segundo número: ");
+                     num2 = entrada.nextInt();
+                     resultado = num1 * num2;
+                     System.out.println(resultado);
+                     
+                     op=0;
+                     System.out.println("");
+                     System.out.println("¿Repetir el ejercicio?");
+                     System.out.println("1. Sí");
+                     System.out.println("2. No");
+                     op = entrada.nextInt();
+                     System.out.print("\033[H\033[2J"); //Clear Screen
+                  } while (op!=2);
+                     break;
+                  case 4:
+                  do { //División
+                     System.out.println("Ingrese el primer número: ");
+                     num1 = entrada.nextInt();
+                     System.out.println("Ingrese el segundo número: ");
+                     num2 = entrada.nextInt();
+                     if (num2 != 0) {
+                        resultado = num1 / num2;
+                        System.out.println(resultado);
+                     } else {
+                        System.out.println("No se puede efectuar una división entre 0.");
+                     }
+                     
+                     op=0;
+                     System.out.println("");
+                     System.out.println("¿Repetir el ejercicio?");
+                     System.out.println("1. Sí");
+                     System.out.println("2. No");
+                     op = entrada.nextInt();
+                     System.out.print("\033[H\033[2J"); //Clear Screen
+                  } while (op!=2);
+                     break;
+               
+                  default:
+                  if ( flag > 5){ //valor usada para salir
+                     System.out.print("\033[H\033[2J"); //Clear Screen
+                     System.out.println("Selecciona una de las opciones anteriores.");
+                  }
+                     break;
+               }
+            
+               //System.out.print("\033[H\033[2J"); //Clear Screen
+            } while(flag != 5);  
                break; 
             
             default:
