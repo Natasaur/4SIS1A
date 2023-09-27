@@ -268,10 +268,11 @@ public class EstructurasControl {
                System.out.print("\033[H\033[2J"); //Clear Screen
             }while(op!=2);  
                break;
-         	case 7:
+         	case 7: //Tabla
             do{
-               //Tabla
-
+               for (int i = 1; i <= 10; i++) {
+                  System.out.println(i + "   |   " + i * 10 + "   |   " + i * 100 + "   |   " + i * 1000);
+               }
                op=0;
                System.out.println("");
                System.out.println("¿Repetir el ejercicio?");
@@ -305,16 +306,17 @@ public class EstructurasControl {
                System.out.print("\033[H\033[2J"); //Clear Screen
             }while(op!=2);  
                break;
-            case 9:
+            case 9: //Figurita Cuadrado
             do{
-               //Figurita Cuadrado
                System.out.println("Ingrese el valor de n: ");
                n = entrada.nextInt();
-               for (int i = 1; i <= n; i++) {
-                  for (int j = 1; j <= n; j++) {
-                     System.out.print("*");
+               if (n>=1 && n<=20) {
+                  for (int i = 1; i <= n; i++) {
+                     for (int j = 1; j <= n; j++) {
+                        System.out.print("*");
+                     }
+                     System.out.println("");
                   }
-                  System.out.println("");
                }
                op=0;
                System.out.println("");
@@ -352,9 +354,8 @@ public class EstructurasControl {
                System.out.print("\033[H\033[2J"); //Clear Screen
             }while(op!=2);   
                break;
-            case 11:
-            do{
-               //Patrón de código
+            case 11: //Patrón de código
+            do{   
                n = 8;
                for (int i = 1; i <= n; i++) {
                   for (int j = 1; j <= n; j++) {

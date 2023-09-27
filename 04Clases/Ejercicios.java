@@ -9,20 +9,20 @@ public class Ejercicios{
         System.out.println("a. Calculadora");
         System.out.println("b. Conversión de unidades");
         System.out.println("c. Crear cuadro mágico");
-        System.out.println("d. Dezplazamiento de un cuadrito");
+        System.out.println("d. Desplazamiento de un cuadrito");
         op = entrada.next().charAt(0);
         switch (op) {
             case 'a':
-            Ejercicio1();
+            Ejercicio1(); //Calculadora
                 break;
             case 'b':
-            Ejercicio2();
+            Ejercicio2(); //Convertidor de unidades
                 break;
             case 'c':
-            Ejercicio3();
+            Ejercicio3(); //Cuadro mágico
                 break;
             case 'd':
-            Ejercicio4();
+            Ejercicio4(); //Dezplazamiento de un cuadrito
                 break;
         
             default:
@@ -31,7 +31,7 @@ public class Ejercicios{
         }
     }
 
-    public void Ejercicio1(){
+    public void Ejercicio1(){ //Calculadora
         //se le llaman metodos vacios porque no poseen argumentos y no son metodos 
         //o funciones que necesiten una entrada o salida de algun tipo de dato
 
@@ -47,7 +47,7 @@ public class Ejercicios{
         operacion = entrada.next().charAt(0);
 
         switch(operacion){
-            case 'a':
+            case 'a': //Suma y Resta
                 //vamos a sumar o restar tantos numeros como desee el usuario
                 //cuando coloque 0 la operacion termina
                 System.out.println("Para detener la suma o resta, ingrese el 0");
@@ -60,7 +60,7 @@ public class Ejercicios{
                 }while(num1 != 0);
                 System.out.println("El resultado de la operacion es: " + suma);
                 break;
-            case 'b':
+            case 'b': //Multiplicación
             System.out.println("Para detener la multiplicacion, ingrese el 0");
                 
                 do{    
@@ -75,39 +75,101 @@ public class Ejercicios{
                 }while(num1 != 0);
                 System.out.println("El resultado de la operacion es: " + multi);
                 break;
-            case 'c':
+            case 'c': //División
             System.out.println("Para detener la división, ingrese el 0");
                 System.out.println("Escriba el numerador: ");
                     num1 = entrada.nextDouble();
+                    div = num1;
                 do{    
                     System.out.println("Escriba el denominador: ");
                     num2 = entrada.nextDouble();
                     if(num2 != 0){
                         div /= num2;
-                        //multi = multi * num1;
-                    }
-                                  
-                    
-                }while(num1 != 0);
-                System.out.println("El resultado de la operacion es: " + multi);
+                        System.out.println("div: " + div); //Imprime el resultado de cada división
+                    }             
+                }while(num2 != 0);
+                System.out.println("El resultado de la operacion es: " + div); //Imprime el valor final de la operación
                 break;    
-                break;
             default:
                 System.out.println("opcion no valida, ayos UwU/");
                 break;
         }
     }
 
-    public void Ejercicio2(){
+    public void Ejercicio2(){ //Convertidor de unidades
+        double metros = 0.00, kg = 0.00,cm = 100, lb = 2.2046, yardas = 1.0936, millas = 0.0006, velocidad, plg = 0.0254, gramos = 1000, ms;
+        double conversion1,conversion2;
+        System.out.println("Selecciona la cantidad que deseas convertir: ");
+        System.out.println("a. Metros a Centímetros y Pulgadas");
+        System.out.println("b. Kilogramos a libras y  gramos");
+        System.out.println("c. m/s a km/hr");
+        System.out.println("d. Metros a yardas y millas");
+        op = entrada.next().charAt(0);
+        switch (op) {
+            case 'a':
+                System.out.println("Ingresa los metros que deseas transformar: ");
+                metros = entrada.nextDouble();
+                conversion1 = metros * cm;
+                conversion2 = metros * plg;
+                System.out.println(metros + " Metros = " + conversion1 + " Centímetros = " + conversion2 + " Pulgadas");
+                break;
+            case 'b':
+                System.out.println("Ingresa los kilogramos que deseas transformar: ");
+                kg = entrada.nextDouble();
+                conversion1 = kg * gramos;
+                conversion2 = kg * lb;
+                System.out.println(kg + " Kilogramos = " + conversion1 + " Gramos = " + conversion2 + " Libras");
+                break;
+            case 'c':
+                
+                break;
+            case 'd':
+                
+                break;
         
+            default:
+            System.out.println("Opción no válida");
+                break;
+        }
     }
 
-    public void Ejercicio3(){
-        
+    public void Ejercicio3(){ //Cuadro mágico
+        int n;
+        System.out.println("Ingrese el valor de n: ");
+               n = entrada.nextInt();
+               for (int i = 1; i <= n; i++) { //Recorre cada cada columna
+                  for (int j = 1; j <= n; j++) { //Recorre cada fila
+                     if (i == 1 || i == n) { //Sólo toma las filas externas
+                        System.out.print("*");
+                     } else if (j == 1 || j == n) { //Sólo toma las columnas externas
+                        System.out.print("*");
+                     } else {
+                        System.out.print(" ");      
+                     }
+                  }
+                  System.out.println("");
+               }
     }
 
     public void Ejercicio4(){
-        
+        int n;
+        System.out.println("Ingrese el número de filas que desea imprimir: ");
+        n = entrada.nextInt();
+        for (int i = 1; i <= n; i++) {
+            for (int j = 1; j <= 8; j++) {
+                if (i % 2 == 0) {
+                if (j == 1) {
+                    System.out.print(" ");
+                    System.out.print("*");
+                } else {
+                    System.out.print("*");
+                }
+                } else {
+                System.out.print("*");
+                }
+            }
+            System.out.println("");
+        }
     }
 
 }
