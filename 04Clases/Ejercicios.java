@@ -97,7 +97,7 @@ public class Ejercicios{
     }
 
     public void Ejercicio2(){ //Convertidor de unidades
-        double metros = 0.00, kg = 0.00,cm = 100, lb = 2.2046, yardas = 1.0936, millas = 0.0006, velocidad, plg = 0.0254, gramos = 1000, ms;
+        double metros = 0.00, kg = 0.00,cm = 100, lb = 2.2046, yardas = 1.0936, millas = 0.0006, plg = 0.0254, gramos = 1000, ms, kh;
         double conversion1,conversion2;
         System.out.println("Selecciona la cantidad que deseas convertir: ");
         System.out.println("a. Metros a Centímetros y Pulgadas");
@@ -106,25 +106,32 @@ public class Ejercicios{
         System.out.println("d. Metros a yardas y millas");
         op = entrada.next().charAt(0);
         switch (op) {
-            case 'a':
+            case 'a': //Metros a centimetros y pulgadas
                 System.out.println("Ingresa los metros que deseas transformar: ");
                 metros = entrada.nextDouble();
                 conversion1 = metros * cm;
                 conversion2 = metros * plg;
-                System.out.println(metros + " Metros = " + conversion1 + " Centímetros = " + conversion2 + " Pulgadas");
+                System.out.println(metros + " Metros = " + conversion1 + " Centímetros = " + conversion2 + " Pulgadas = ");
                 break;
-            case 'b':
+            case 'b': //Kg a libras y gramos
                 System.out.println("Ingresa los kilogramos que deseas transformar: ");
                 kg = entrada.nextDouble();
                 conversion1 = kg * gramos;
                 conversion2 = kg * lb;
-                System.out.println(kg + " Kilogramos = " + conversion1 + " Gramos = " + conversion2 + " Libras");
+                System.out.println(kg + " Kilogramos = " + conversion1 + " Gramos = " + conversion2 + " Libras = ");
                 break;
-            case 'c':
-                
+            case 'c': //m/s a km/hr
+                System.out.println("Ingrese los metros por segundo que desea convertir: ");
+                ms = entrada.nextDouble();
+                kh = ms * 3600 / 1000;
+                System.out.println(ms + " m/s = " + kh + " km/hr");
                 break;
-            case 'd':
-                
+            case 'd': //Metros a yardas y millas
+                System.out.println("Ingresa los metros que deseas transformar: ");
+                metros = entrada.nextDouble();
+                conversion1 = metros * yardas;
+                conversion2 = metros * millas;
+                System.out.println(metros + " Metros = " + conversion1 + " Yardas = " + conversion2 + " millas = ");
                 break;
         
             default:
