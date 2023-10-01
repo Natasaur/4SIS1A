@@ -529,11 +529,6 @@ public class EstructurasControl {
             }
                break;
          	}//Switch
-
-
         } while (op != 14); //letra = entrada.next().charAt(0);
-
-
-    }
-    
+    }    
 }
