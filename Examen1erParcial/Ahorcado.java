@@ -17,6 +17,8 @@ public class Ahorcado {
         System.out.println();
         System.out.println("                    ¡¡¡Bienvenidos al juego de AHORCADO!!!");
         System.out.println();
+System.out.println();
+System.out.println("Este programa fue elaborado por Natalia García para la materia de Programación Orientada a Objetos");
 
         //Identifica al jugador
         System.out.print("Ingrese el nombre del jugador: ");
