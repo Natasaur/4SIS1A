@@ -7,7 +7,7 @@ import java.util.*;
 public class Ahorcado {
     String firstString, palabra, nombre;
     Scanner entrada = new Scanner(System.in);
-    boolean resuelto = false, contains = false;
+    boolean resuelto = false, contains = false, gameover = false;
     //boolean[] letrasconocidas = new boolean[3];
     char letra, confirma;
     int errores = 0, score = 0;
@@ -35,10 +35,27 @@ public class Ahorcado {
             //Empieza el juego
             cuerpo(palabra);    
         }
-        //System.out.print("\033[H\033[2J"); //Clear Screen
-        System.out.println("          Gracias por jugar AHORCADO!!!");
-        
 
+        if (gameover == true) {
+            despedidanegativa();
+        } else {
+            despedidapositiva();
+        }
+        //System.out.print("\033[H\033[2J"); //Clear Screen
+    }
+
+    public void despedidapositiva(){
+        System.out.print("\033[H\033[2J"); //Clear Screen
+        System.out.println("Felicidades!!!");
+        System.out.println("Encontraste la palabra " + palabra + "!!!");
+        System.out.println("          Gracias por jugar AHORCADO!!!");
+    }
+
+    public void despedidanegativa(){
+        System.out.print("\033[H\033[2J"); //Clear Screen
+        System.out.println("          ¡GAME OVER!");
+        System.out.println("Intentalo mejor la próxima vez");
+        System.out.println("          Gracias por jugar AHORCADO!!!");
     }
 
     public char pistas(String nombre){
@@ -65,6 +82,15 @@ public class Ahorcado {
         return palabra;
     }
 
+    public boolean iguales(boolean[] m, boolean[] n){
+        for (int i = 0; i < m.length; i++) {
+            if (m[i] != n[i]) {
+                return false;
+            }
+        }
+        return true;
+    }
+
     public void cuerpo(String palabra){
         //System.out.print("\033[H\033[2J"); //Clear Screen
         boolean[] letrasconocidas = new boolean[palabra.length()];
@@ -77,6 +103,7 @@ public class Ahorcado {
         letrasconocidas[0] = true;
         letrasconocidas[palabra.length()-1] = true;
         do {
+            
             System.out.print("\033[H\033[2J"); //Clear Screen
 
             //Imprime cada vez la palabra con ayuda de letras conocidas
@@ -91,6 +118,11 @@ public class Ahorcado {
             }
             System.out.println("     Errores: " + errores + "     Puntaje: " + score);
             System.out.println();
+
+            if (errores >= 5) {
+                resuelto = true;
+                gameover = true;
+            }
             
             System.out.print("Ingresa una letra: ");
             letra = entrada.next().charAt(0);
@@ -103,16 +135,15 @@ public class Ahorcado {
                 }
             }
 
-            if (contains == false) { //Si no se encontraron coincidencias en el bloque anterior, suma el error
+            //Si no se encontraron coincidencias en el bloque anterior, suma el error
+            if (contains == false) { 
                     errores += 1;
             }
-            
-            if (letrasconocidas == completado) {
+
+            if (iguales(completado, letrasconocidas) == true) {
                 resuelto = true;
             }
-
+            
         } while (resuelto == false);
-        
-
     }
 }
