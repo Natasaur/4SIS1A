@@ -4,7 +4,7 @@ public class ArregloEnteros {
         Scanner entrada = new Scanner(System.in);
         int vec[] = new int[10];
         int positivos = 0, negativos = 0, pares = 0;
-        int op;
+        int op, promedio = 0;
 
         public void menu() {
             op = 0;
@@ -51,9 +51,13 @@ public class ArregloEnteros {
                 vec[i] = entrada.nextInt();
             }
             for (int i = 0; i < vec.length; i++) {
-                System.out.print(vec[i] + " ");
+                if (i % 2 == 0) {
+                   promedio += vec[i];
+                }
             }
-
+            promedio += vec[0];
+            promedio /= 6;
+            System.out.println("El promedio de las posiciones impares es de: " + promedio);
         }
         
     
