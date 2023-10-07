@@ -57,7 +57,7 @@ public class ArregloEnteros {
             }
             promedio += vec[0];
             promedio /= 6;
-            System.out.println("El promedio de las posiciones impares es de: " + promedio);
+            System.out.println("El promedio de las posiciones pares es de: " + promedio);
         }
         
     
