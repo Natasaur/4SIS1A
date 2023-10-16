@@ -5,7 +5,7 @@ public class ArregloEnteros {
         Scanner entrada = new Scanner(System.in);
         int vec[] = new int[10];
         int positivos = 0, negativos = 0, pares = 0;
-        int op, aprobados, reprobados; 
+        int op, aprobados, reprobados, cp, cn; 
         double promedio = 0;
 
         public void menu() {
@@ -43,13 +43,15 @@ public class ArregloEnteros {
                 System.out.print("Ingrese el valor " + (i+1) + ": ");
                 vec[i] = entrada.nextInt();
                 if (vec[i] > 0) {
-                    positivos += vec[i];                
+                    positivos += vec[i];
+                    cp += 1;             
                 } else {
                     negativos += vec[i];
+                    cn += 1;
                 }
             }
-            System.out.println("La suma de los números Positivos es de: " + positivos);
-            System.out.println("La suma de los números Negativos es de: " + negativos);
+            System.out.println("El promedio de los números Positivos es de: " + positivos/cp);
+            System.out.println("El promdeio de los números Negativos es de: " + negativos/cn);
         }
 
         public void Ejercicio2() { //Promedio de posiciones pares
