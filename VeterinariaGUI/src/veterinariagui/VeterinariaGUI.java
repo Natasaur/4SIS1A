@@ -6,7 +6,11 @@ package veterinariagui;
 
 /**
  *
- * @author jakeg
+ * @authors
+ * García Fuentes Omar
+ * García Salas Natalia
+ * Hernandez Hernandez Lucia
+ * Ladrillero Hipolito Eduardo
  */
 import javax.swing.*;
 import java.awt.event.ActionEvent;

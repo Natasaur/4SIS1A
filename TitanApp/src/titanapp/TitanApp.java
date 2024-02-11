@@ -46,6 +46,7 @@ class MenuPrincipal extends JFrame {
             @Override
             public void actionPerformed(ActionEvent e) {
                 TitanInfoFrame fundadorInfo = new TitanInfoFrame("Titan Fundador", "Se trata del titán más poderoso de todos ya que puede crear titanes puros y controlar todas sus acciones.\n", "fundador.jpg");
+                fundadorInfo.setSize(1000,800);
                 fundadorInfo.setVisible(true);
                 dispose(); // Cierra el menú principal
             }
@@ -55,6 +56,7 @@ class MenuPrincipal extends JFrame {
             @Override
             public void actionPerformed(ActionEvent e) {
                 TitanInfoFrame ataqueInfo = new TitanInfoFrame("Titan de Ataque", "Tras la Gran Guerra de los Titanes, el país de Marley consiguió a 7 de los 9 titanes.\n Uno de los que se resistió que el Titán de Ataque que siempre ha luchado por la libertad de Eldia.\n", "ataque.jpg");
+                ataqueInfo.setSize(1000,800);
                 ataqueInfo.setVisible(true);
                 dispose(); // Cierra el menú principal
             }
@@ -64,6 +66,7 @@ class MenuPrincipal extends JFrame {
             @Override
             public void actionPerformed(ActionEvent e) {
                 TitanInfoFrame colosalInfo = new TitanInfoFrame("Titan Colosal", "El Titán Colosal se reconoce muy fácilmente por su aspecto y fue uno de los primeros titanes en aparecer en la serie.\n Es el más grande y fuerte físicamente, aunque también es lento.\n Como habilidad única, es capaz de expulsar grandes cantidades de vapor caliente por todo su cuerpo sin necesidad de recibir daño.\n ", "colosal.jpg");
+                colosalInfo.setSize(1000,800);
                 colosalInfo.setVisible(true);
                 dispose(); // Cierra el menú principal
             }
@@ -73,6 +76,7 @@ class MenuPrincipal extends JFrame {
             @Override
             public void actionPerformed(ActionEvent e) {
                 TitanInfoFrame acorazadoInfo = new TitanInfoFrame("Titan Acorazado", "Como su propio nombre indica, el Titán Acorazado destaca por la dureza de su piel, extremadamente gruesa.\n Por esa razón, tanto el Titán Colosal como el Acorazado se consideran tan letales.\n", "acorazado.jpg");
+                acorazadoInfo.setSize(1000,800);
                 acorazadoInfo.setVisible(true);
                 dispose(); // Cierra el menú principal
             }
@@ -82,6 +86,7 @@ class MenuPrincipal extends JFrame {
             @Override
             public void actionPerformed(ActionEvent e) {
                 TitanInfoFrame hembraInfo = new TitanInfoFrame("Titan Hembra", "El primer encuentro con el Titán Hembra dejó muchas evidencias sobre quién podría estar detrás de ese gigante.\n Todas las pistas apuntaban a Annie Leonhart y poco después se confirmó.\n", "hembra.jpg");
+                hembraInfo.setSize(1000,800);
                 hembraInfo.setVisible(true);
                 dispose(); // Cierra el menú principal
             }
@@ -91,6 +96,7 @@ class MenuPrincipal extends JFrame {
             @Override
             public void actionPerformed(ActionEvent e) {
                 TitanInfoFrame bestiaInfo = new TitanInfoFrame("Titan Bestia", "Todos los titanes tienen un aspecto singular, en especial el Titán Bestia.\n El portador de este poder tiene una gran fuerza física y es capaz de convertir a los seres humanos en titanes.\n ", "bestia.jpg");
+                bestiaInfo.setSize(1000,800);
                 bestiaInfo.setVisible(true);
                 dispose(); // Cierra el menú principal
             }
@@ -100,6 +106,7 @@ class MenuPrincipal extends JFrame {
             @Override
             public void actionPerformed(ActionEvent e) {
                 TitanInfoFrame mandivulaInfo = new TitanInfoFrame("Titan Mandívula", "En la serie anime se han visto varios Titanes Mandíbula, aunque quizás el más popular sea Ymir.\n El aspecto de esta criatura es bastante desproporcionado, pero sus fortalezas son una poderosa mandíbula y las garras.\n El primer portador conocido es Marcel Galliard que colaboró en la guerra de expansión territorial de Marley, donde fue utilizado como un arma militar.", "mandivula.jpg");
+                mandivulaInfo.setSize(1000,800);
                 mandivulaInfo.setVisible(true);
                 dispose(); // Cierra el menú principal
             }
@@ -109,6 +116,7 @@ class MenuPrincipal extends JFrame {
             @Override
             public void actionPerformed(ActionEvent e) {
                 TitanInfoFrame cargueroInfo = new TitanInfoFrame("Titan Carguero", "Quizás sea uno de los titanes más desconocidos porque no tiene especial relevancia en la trama de la serie.\n Eso no quiere decir que no sea peligroso, ya que todos los titanes son utilizados como un arma de guerra desde hace siglos.\n ", "carguero.jpg");
+                cargueroInfo.setSize(1000,800);
                 cargueroInfo.setVisible(true);
                 dispose(); // Cierra el menú principal
             }
@@ -118,12 +126,14 @@ class MenuPrincipal extends JFrame {
             @Override
             public void actionPerformed(ActionEvent e) {
                 TitanInfoFrame martilloInfo = new TitanInfoFrame("Titan Martillo de Guerra", "Si hablamos de este titán, es necesario hablar de la familia Tybur.\n Es un clan bastante influyente que tiene el poder del Titán Martillo de Guerra, pero es más raro verlos en acción.\n ", "martillo.jpg");
+                martilloInfo.setSize(1000,800);
                 martilloInfo.setVisible(true);
                 dispose(); // Cierra el menú principal
             }
         });
 
         JPanel panel = new JPanel();
+        panel.setSize(1000,800);
         panel.add(new JLabel("Selecciona un Titan:"));
         panel.add(fundadorButton);
         panel.add(ataqueButton);
@@ -165,6 +175,7 @@ class TitanInfoFrame extends JFrame {
         });
 
         JPanel panel = new JPanel();
+        panel.setSize(1000,800);
         panel.add(nameLabel);
         panel.add(descriptionTextArea);
         panel.add(imageLabel);

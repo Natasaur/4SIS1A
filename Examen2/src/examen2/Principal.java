@@ -6,7 +6,11 @@ package examen2;
 
 /**
  *
- * @author jakeg
+ * @authors
+ * García Fuentes Omar
+ * García Salas Natalia
+ * Hernandez Hernandez Lucia
+ * Ladrillero Hipolito Eduardo
  */
 // Importar las clases necesarias
 import java.util.ArrayList;

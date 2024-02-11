@@ -32,6 +32,7 @@ public class CalculadoraFondo extends JFrame implements ActionListener {
         setSize(300, 400);
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         setResizable(false);
+        setLocationRelativeTo(null);
         
         // Panel principal
         JPanel panel = new JPanel();
